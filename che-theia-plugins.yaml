@@ -33,6 +33,7 @@ plugins:
       - che-incubator/typescript
     sidecar:
       directory: node
+      memoryLimit: 512Mi
       cpuLimit: 500m
       cpuRequest: 200m
     extensions:
@@ -457,7 +458,7 @@ plugins:
     sidecar:
       directory: kubernetes-tooling
       name: vscode-kubernetes-tools
-      memoryLimit: 1G
+      memoryLimit: 1Gi
       cpuLimit: 500m
       cpuRequest: 200m
     extensions:
@@ -495,7 +496,7 @@ plugins:
     sidecar:
       directory: dotnet
       name: theia-omnisharp
-      memoryLimit: 1024Mi
+      memoryLimit: 1Gi
       cpuLimit: 500m
       cpuRequest: 200m
       volumeMounts:
@@ -511,7 +512,7 @@ plugins:
     sidecar:
       directory: rust
       name: vscode-rust
-      memoryLimit: 1024Mi
+      memoryLimit: 1Gi
       cpuLimit: 500m
       cpuRequest: 200m
     extensions:
@@ -578,6 +579,21 @@ plugins:
           value: /projects/.zowe
     extensions:
       - https://open-vsx.org/api/BroadcomMFD/cobol-language-support/0.16.1/file/BroadcomMFD.cobol-language-support-0.16.1.vsix
+
+  # broadcommfd/debugger-for-mainframe/1.2.0
+  - id: broadcommfd/debugger-for-mainframe/1.2.0
+    isClosedSource: true
+    repository:
+      url: https://github.com/BroadcomMFD/debugger-for-mainframe
+    sidecar:
+      directory: java
+      memoryLimit: 512Mi
+      cpuLimit: 500m
+      cpuRequest: 200m
+      name: debugger-for-mainframe
+      mountSources: true
+    extensions:
+      - https://open-vsx.org/api/BroadcomMFD/debugger-for-mainframe/1.2.0/file/BroadcomMFD.debugger-for-mainframe-1.2.0.vsix
 
   # broadcommfd/hlasm-language-support/0.11.1
   - repository:
