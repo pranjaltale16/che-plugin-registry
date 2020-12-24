@@ -392,15 +392,17 @@ plugins:
       - https://download.jboss.org/jbosstools/vscode/3rdparty/vscode-java-debug/vscode-java-debug-0.26.0.vsix
       - https://open-vsx.org/api/vscjava/vscode-java-test/0.24.0/file/vscjava.vscode-java-test-0.24.0.vsix
 
-  # felixfbecker/vscode-php-debug/1.13.0
+  # felixfbecker/php-debug/1.13.0
   - repository:
       url: https://github.com/felixfbecker/vscode-php-debug
       revision: v1.13.0
     aliases:
+      - felixfbecker/vscode-php-debug
       - redhat/php-debugger
     sidecar:
       directory: php
       name: php-debugger
+      memoryLimit: 256Mi
       cpuLimit: 500m
       cpuRequest: 200m
     extensions:
